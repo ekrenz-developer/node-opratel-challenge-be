@@ -1,15 +1,17 @@
 import "dotenv/config";
+import express, { Application } from "express";
 import config from "./config/env";
-import server from "./App";
+import setLoaders from "./loaders/index";
 
-const port: Number = Number(config.PORT) || 8080;
+async function startServer() {
+  const server: Application = express();
+  const port: Number = Number(config.PORT) || 8080;
 
-server.get("/api", (req, res) => {
-  res.status(200).send({
-    message: "test okk"
+  await setLoaders(server);
+  
+  server.listen(port, () => {
+    console.log(`Server is up in port ${port}`);
   })
-})
+}
 
-server.listen(port, () => {
-  console.log(`Server is up in port ${port}`);
-})
+startServer();
