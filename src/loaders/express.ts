@@ -8,12 +8,17 @@ import setRoutes from "../routes/index";
 import config from "../config/env";
 
 const expressLoader = (server: Application) => {
+  /*
   if (config.NODE_ENV === "production") {
     server.use(helmet());
     server.use(compression());
   } else {
     server.use(cors());
   }
+  */
+  server.use(helmet());
+  server.use(compression());
+  server.use(cors());
 
   server.use(json());
   server.use(urlencoded({ extended: true }));
