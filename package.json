@@ -4,9 +4,10 @@
   "description": "API opratel challenge",
   "main": "index.js",
   "scripts": {
-    "start": "npm run build && node ./dist/index.js",
+    "start": "node ./dist/index.js",
     "dev": "nodemon",
     "build": "webpack --mode production",
+    "heroku-postbuild": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
