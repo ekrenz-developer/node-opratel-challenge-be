@@ -3,7 +3,7 @@ import helmet from "helmet";
 import compression from "compression";
 import cors from "cors";
 import { json, urlencoded } from "body-parser";
-import { JSONResponse, ResponseError } from "../utils/JsonResponse";
+import { JSONResponse, ResponseError } from "../utils/JSONResponse";
 import setRoutes from "../routes/index";
 import config from "../config/env";
 

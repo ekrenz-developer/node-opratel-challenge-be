@@ -1,5 +1,5 @@
 import { Types, Model, Document} from "mongoose";
-import { IResponseSuccess, ResponseError } from "../utils/JsonResponse";
+import { IResponseSuccess, ResponseError } from "../utils/JSONResponse";
 
 class Service {
   model: any;
