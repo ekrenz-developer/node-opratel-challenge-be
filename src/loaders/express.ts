@@ -5,7 +5,8 @@ import cors from "cors";
 import { json, urlencoded } from "body-parser";
 import { JSONResponse, ResponseError } from "../utils/JSONResponse";
 import setRoutes from "../routes/index";
-import config from "../config/env";
+import middlewares from "../middlewares/index";
+//import config from "../config/env";
 
 const expressLoader = (server: Application) => {
   /*
@@ -25,7 +26,7 @@ const expressLoader = (server: Application) => {
 
   setRoutes(server);
 
-  //server.use(middlewares.notFoundHandler);
+  server.use(middlewares.notFoundHandler);
 
   server.use((err: ResponseError, req: Request, res: Response, next: NextFunction) => {
     JSONResponse.handleError(res, err)

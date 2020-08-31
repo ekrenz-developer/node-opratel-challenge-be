@@ -1,5 +1,5 @@
 import { Types } from "mongoose";
-import {Request, Response, NextFunction } from "express";
+import { Request, Response, NextFunction } from "express";
 import Service from "../services/Service";
 import { JSONResponse } from "../utils/JSONResponse";
 
