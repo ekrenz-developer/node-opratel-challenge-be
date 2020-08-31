@@ -19,7 +19,7 @@ export class ResponseError extends Error {
   }
 }
 
-class JSONResponse {
+export class JSONResponse {
   constructor() {}
 
   static handleSuccess(res: Response, response: IResponseSuccess) {
@@ -33,5 +33,3 @@ class JSONResponse {
     return res.status(response.code).send(response);
   }
 }
-
-export default JSONResponse;
